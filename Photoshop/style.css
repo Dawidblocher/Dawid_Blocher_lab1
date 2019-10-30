@@ -1,0 +1,31 @@
+body {
+    background: lightgray;
+}
+
+button {
+    display: inline-block;
+}
+
+#canvas {
+    background: #fff;
+    margin: 0 auto;
+    position: relative;
+    display: block;
+}
+
+.brush {
+    width: 10px;
+    height: 10px;
+    background: red;
+    position: absolute;
+    transform: translate(-50%, -50%);
+
+}
+
+.square-brush {
+    border-radius: 0;
+}
+
+.circle-brush {
+    border-radius: 50%;
+}

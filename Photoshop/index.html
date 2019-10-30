@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="Brush.js"></script>
+    <script src="Photoshop.js"></script>
+    <script src="main.js"></script>
+</body>
+</head>
+
+<body>
+    <div class="control">
+        <label for="color">Color: </label>
+        <input type="color" id="color" name="color" value="#000000">
+    </div>
+    <div class="control">
+        <label for="range">Szie: </label>
+        <input type="range" id="range" name="range" value="10">
+    </div>
+    <div class="control">
+        <label for="file">Szie: </label>
+        <input type="file" id="file" name="file">
+    </div>
+    <div class="control">
+        <label for="rangeDark">Rozciemnij: </label>
+        <input type="range" id="rangeDark" name="range" value="10">
+    </div>
+    <button id="squareBtn">Kwadrat</button>
+    <button id="circleBtn">Koło</button>
+    <button id="clear">Clear</button>
+    <button id="darken">Ściemnaj</button>
+    <canvas id="canvas" width="900" height="600"></canvas>
+    
+
+</html>

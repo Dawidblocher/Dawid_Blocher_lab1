@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Drum Kit</title>
+    <script src="https://kit.fontawesome.com/e1690fc816.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap&subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="instruction">
+            <h2>DrumKit - Instruction</h2>
+            <p>a - Clap</p>
+            <p>s - Boom</p>
+            <p>d - Hithat</p>
+            <p>f - Kick</p>
+            <p>g - Openhat</p>
+            <p>h - Ride</p>
+            <p>j - Snare</p>
+            <p>k - Tink</p>
+            <p>l - Tom</p>
+        </div>
+
+        <audio src="sounds/clap.wav" id="clap"></audio>
+        <audio src="sounds/boom.wav" id="boom"></audio>
+        <audio src="sounds/hihat.wav" id="hihat"></audio>
+        <audio src="sounds/kick.wav" id="kick"></audio>
+        <audio src="sounds/openhat.wav" id="openhat"></audio>
+        <audio src="sounds/ride.wav" id="ride"></audio>
+        <audio src="sounds/snare.wav" id="snare"></audio>
+        <audio src="sounds/tink.wav" id="tink"></audio>
+        <audio src="sounds/tom.wav" id="tom"></audio>
+        <div class="controls-wrap">
+            <div class="controls">
+                <h3>Channel 1</h3>
+                <button id="channel1rec" class="rec-btn"><i class="fas fa-microphone-alt"></i></button>
+                <button id="channel1play" class="play-btn"><i class="far fa-play-circle"></i></button>
+            </div>
+
+            <div class="controls">
+                <h3>Channel 2</h3>
+                <button id="channel2rec" class="rec-btn"><i class="fas fa-microphone-alt"></i> </button>
+                <button id="channel2play" class="play-btn"><i class="far fa-play-circle"></i></button>
+            </div>
+            <div class="controls">
+                <h3>Channel 3</h3>
+                <button id="channel3rec" class="rec-btn"><i class="fas fa-microphone-alt"></i></button>
+                <button id="channel3play" class="play-btn"><i class="far fa-play-circle"></i></button>
+            </div>
+            <div class="controls">
+                <h3>Channel 4</h3>
+                <button id="channel4rec" class="rec-btn"><i class="fas fa-microphone-alt"></i> </button>
+                <button id="channel4play" class="play-btn"><i class="far fa-play-circle"></i></button>
+            </div>
+        </div>
+
+
+    </div>
+    <script type="text/javascript" src="Drumkit.js"></script>
+</body>
+
+</html>
