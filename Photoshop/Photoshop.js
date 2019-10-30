@@ -57,13 +57,23 @@ class Photoshop {
         })
     }
 
-    darkenFilter(e,amount = 30){
+    darkenFilter(amount = 30){
         const canvasData = this.ctx.getImageData(0,0,900,600);
-        console.log(e)
+        console.log(amount)
         for(let i = 0; i < canvasData.data.length; i+=4){
                 canvasData.data[i] -= amount
                 canvasData.data[i+1] -= amount
                 canvasData.data[i+2] -= amount         
+        }
+        this.ctx.putImageData(canvasData, 0, 0)
+    }
+    brightnesFilter(amount = 30){
+        const canvasData = this.ctx.getImageData(0,0,900,600);
+        console.log(amount)
+        for(let i = 0; i < canvasData.data.length; i+=4){
+                canvasData.data[i] += amount
+                canvasData.data[i+1] += amount
+                canvasData.data[i+2] += amount         
         }
         this.ctx.putImageData(canvasData, 0, 0)
     }
