@@ -53,6 +53,7 @@ class Drumkit {
     }
 
     playSound = (code) => {
+        console.log(code);
         switch (code) {
             case 'KeyA':
                 clapSound.currentTime = 0;
