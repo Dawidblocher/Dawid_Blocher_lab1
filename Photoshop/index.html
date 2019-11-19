@@ -6,35 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap&subset=latin-ext"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="Brush.js"></script>
     <script src="Photoshop.js"></script>
     <script src="main.js"></script>
-</body>
+
 </head>
 
 <body>
-    <div class="control">
-        <label for="color">Color: </label>
-        <input type="color" id="color" name="color" value="#000000">
+    <div class="cursor"></div>
+
+    <nav class="nav-sticky">
+        <h1>Photoshop</h1>
+        <div class="control">
+            <button id="clear">Nowy Plik</button>
+        </div>
+        <div class="control">
+            <label for="color">Color: </label>
+            <input type="color" id="color" name="color" value="#000000">
+        </div>
+
+        <div class="control">
+            <label for="range" class="labelSize">Size: 16</label>
+            <input type="range" id="range" name="range" value="16">
+        </div>
+
+
+        <div class="control">
+            <h3>Filtry</h3>
+            <button id="darken">Przyciemnij</button>
+            <button id="brightnes">Rozjaśnij</button>
+            <button id="contrast">Kontrast</button>
+            <button id="black">Czarnobiałe</button>
+        </div>
+        <div class="control">
+            <h3>Pędzle</h3>
+            <button id="squareBtn">Kwadrat</button>
+            <button id="circleBtn">Koło</button>
+        </div>
+
+        <div class="control">
+            <h3>Załaduj</h3>
+            <button id="imgBtn">Obraz</button>
+        </div>
+    </nav>
+    <div class="imgChoose">
+        <img src="img/testObraz.jpg" alt="" class="selectImg imgActive">
+        <img src="img/boat.jpg" alt="" class="selectImg">
+        <img src="img/dj.jpg" alt="" class="selectImg">
     </div>
-    <div class="control">
-        <label for="range">Szie: </label>
-        <input type="range" id="range" name="range" value="10">
-    </div>
-    <div class="control">
-        <label for="file">Szie: </label>
-        <input type="file" id="file" name="file">
-    </div>
-    <div class="control">
-        <button id="darken">Przyciemnij</button>
-        <button id="brightnes">Rozjaśnij</button>
-    </div>
-    <button id="squareBtn">Kwadrat</button>
-    <button id="circleBtn">Koło</button>
-    <button id="clear">Clear</button>
-    <button id="darken">Ściemnaj</button>
-    <canvas id="canvas" width="900" height="600"></canvas>
-    
+
+    <canvas id="canvas" height="600"></canvas>
+
 
 </html>

@@ -1,14 +1,71 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+}
+
 body {
     background: lightgray;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+h1 {
+    margin: 0;
+    padding: 10px;
+    background: #3C3C3C;
+    color: #fff;
+}
+
+h3 {
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.nav-sticky {
+    position: fixed;
+    left: 0;
+    top: 0;
+    box-shadow: 10px -1px 12px -2px rgba(184, 184, 184, 1);
+    height: 100%;
+    background: #3C3C3C;
 }
 
 button {
-    display: inline-block;
+    display: block;
+    background: transparent;
+    width: 100%;
+    padding: 10px;
+    border: 0;
+    margin: 3px 0;
+    color: white;
+    border-bottom: 1px solid lightgray;
+    border-top: 1px solid lightgray;
+}
+
+input[type="color"] {
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    padding: 0;
+    height: 50px;
+    outline: none;
+}
+
+input[type="range"] {
+    display: block;
+}
+
+main {
+    margin-top: 140px;
 }
 
 #canvas {
     background: #fff;
-    margin: 0 auto;
     position: relative;
     display: block;
 }
@@ -28,4 +85,35 @@ button {
 
 .circle-brush {
     border-radius: 50%;
+}
+
+.imgChoose {
+    position: absolute;
+    display: flex;
+    width: 500px;
+    left: 50%;
+    bottom: -100%;
+    transform: translateX(-50%);
+    transition: 0.5s bottom;
+    justify-content: space-between;
+    z-index: 9;
+}
+
+.imgChoose.active {
+    bottom: 50px;
+}
+
+.selectImg {
+    display: block;
+    width: 32.3333%;
+    box-shadow: 0;
+    margin: 5px 0px;
+}
+
+.imgActive {
+    box-shadow: 0px 0px 0px 3px rgba(255, 0, 0, 1);
+}
+
+.control {
+    padding: 10px 10px;
 }
