@@ -42,6 +42,8 @@ function appStart() {
     document.querySelector('#clear').addEventListener('click', () => myPs.clearWorkspace());
     document.querySelector('#darken').addEventListener('click', () => myPs.darkenFilter());
     document.querySelector('#brightnes').addEventListener('click', () => myPs.brightnesFilter());
+    document.querySelector('#black').addEventListener('click', () => myPs.blackAndWhiteFilter());
+    document.querySelector('#contrast').addEventListener('click', () => myPs.contrastFilter());
 
 
 }
