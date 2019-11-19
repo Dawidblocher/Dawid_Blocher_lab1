@@ -21,29 +21,48 @@ class Photoshop {
         // ustal położenie
         let x = e.touches[0].clientX - this.canvas.offsetLeft - 8;
         let y = e.touches[0].clientY - this.canvas.offsetTop - 8;
-        console.log(e.touches[0].clientX - this.canvas.offsetLeft);
         this.ctx.beginPath();
         this.ctx.fillStyle = this.brushShape.color;
         this.ctx.strokeStyle = this.brushShape.color;
         switch (this.brushShape.shape) {
             case 'square':
-                this.ctx.fillRect(x - (this.brushShape.size / 2), y - (this.brushShape.size / 2), this.brushShape.size, this.brushShape.size);
+                this.drawSquare(x, y);
                 break;
             case 'circle':
-                this.ctx.arc(x, y, this.brushShape.size / 2, 0, 10 * Math.PI);
-                this.ctx.fill();
+                this.drawCircle(x, y);
+                break;
+            case 'star':
+                this.drawStar(x, y);
                 break;
             case 'img':
                 this.drawImage(this.selectedImg, x, y)
                 break;
-            case 'picker':
-
-                this.pickColor(e);
-
-                break;
-
         }
         this.ctx.stroke();
+    }
+
+    drawSquare(x, y) {
+        this.ctx.fillRect(x - (this.brushShape.size / 2), y - (this.brushShape.size / 2), this.brushShape.size, this.brushShape.size);
+    }
+
+    drawCircle(x, y) {
+        this.ctx.arc(x, y, this.brushShape.size / 2, 0, 10 * Math.PI);
+        this.ctx.fill();
+    }
+
+    drawStar(x, y) {
+        const size = this.brushShape.size / 10;
+        this.ctx.beginPath();
+        this.ctx.moveTo(x, y);
+        this.ctx.lineTo((x + 20 * size), y);
+        this.ctx.lineTo((x - 10 * size), (y + 20 * size));
+        this.ctx.lineTo(x, (y - 15 * size));
+        this.ctx.lineTo((x + 10 * size), (y + 20 * size));
+        this.ctx.lineTo(x - 20 * size, y);
+        this.ctx.lineTo(x, y);
+        this.ctx.fill();
+        this.ctx.stroke();
+
     }
 
     setBrush(brushShape) {
@@ -53,7 +72,6 @@ class Photoshop {
         } else {
             document.querySelector('.imgChoose').classList.remove('active');
         }
-
     }
 
     setColorBrush(color) {
@@ -110,7 +128,7 @@ class Photoshop {
         this.ctx.putImageData(canvasData, 0, 0)
     }
 
-    blackAndWhiteFilter(amount = 1.2) {
+    blackAndWhiteFilter() {
         const canvasData = this.ctx.getImageData(0, 0, this.canvas.width, 600);
         for (let i = 0; i < canvasData.data.length; i += 4) {
             let grayscale = canvasData.data[i] * .3 + canvasData.data[i + 1] * .59 + canvasData.data[i + 2] * .11;

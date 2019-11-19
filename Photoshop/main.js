@@ -4,7 +4,6 @@ function appStart() {
     const myPs = new Photoshop('canvas');
     const btnColor = document.querySelector('#color');
     const btnSize = document.querySelector('#range');
-    window.addEventListener('resize', (e) => myPs.setSizeCanvas(e))
 
     document
         .querySelector('#squareBtn')
@@ -16,6 +15,12 @@ function appStart() {
         .querySelector('#circleBtn')
         .addEventListener('click', () => {
             myPs.setBrush('circle')
+        })
+
+    document
+        .querySelector('#starBtn')
+        .addEventListener('click', () => {
+            myPs.setBrush('star')
         })
 
     document
@@ -37,9 +42,6 @@ function appStart() {
     document.querySelector('#clear').addEventListener('click', () => myPs.clearWorkspace());
     document.querySelector('#darken').addEventListener('click', () => myPs.darkenFilter());
     document.querySelector('#brightnes').addEventListener('click', () => myPs.brightnesFilter());
-    document.querySelector('#contrast').addEventListener('click', () => myPs.contrastFilter());
-    document.querySelector('#black').addEventListener('click', () => myPs.blackAndWhiteFilter());
-
 
 
 }
