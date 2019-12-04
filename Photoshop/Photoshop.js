@@ -2,9 +2,13 @@ class Photoshop {
     constructor(targetElementId) {
         this.canvas = document.querySelector('#' + targetElementId)
         this.canvas.width = window.innerWidth - 200;
-        this.ctx = canvas.getContext('2d')
+        this.ctx = canvas.getContext('2d');
         this.canvas.addEventListener('touchmove', (e) => this.onTouchMove(e))
         this.canvas.addEventListener('touchstart', (e) => this.onTouchMove(e))
+        this.canvas.addEventListener('mousemove', (e) => this.onMouseMove(e))
+        this.canvas.addEventListener('mousedown', (e) => this.onMouseDown(e))
+        this.canvas.addEventListener('mouseup', (e) => this.onMouseUp(e))
+        this.canPaint = false;
         this.brushShapeName = 'square';
         this.brushColor = '#000';
         this.brushSize = 10;
@@ -13,6 +17,63 @@ class Photoshop {
     }
     setSizeCanvas(e) {
         this.canvas.width = e.target.innerWidth - 200;
+    }
+
+    onMouseDown(e) {
+        this.canPaint = true;
+        this.brushShape = new Brush(this.brushShapeName, this.brushColor, this.brushSize);
+        // ustal położenie
+        let x = e.layerX;
+        let y = e.layerY;
+        this.ctx.beginPath();
+        this.ctx.fillStyle = this.brushShape.color;
+        this.ctx.strokeStyle = this.brushShape.color;
+        switch (this.brushShape.shape) {
+            case 'square':
+                this.drawSquare(x, y);
+                break;
+            case 'circle':
+                this.drawCircle(x, y);
+                break;
+            case 'star':
+                this.drawStar(x, y);
+                break;
+            case 'img':
+                this.drawImage(this.selectedImg, x, y)
+                break;
+        }
+        this.ctx.stroke();
+    }
+    onMouseUp(e) {
+        this.canPaint = false;
+    }
+
+    onMouseMove(e) {
+        if (this.canPaint) {
+            this.brushShape = new Brush(this.brushShapeName, this.brushColor, this.brushSize);
+            // ustal położenie
+            let x = e.layerX;
+            let y = e.layerY;
+            this.ctx.beginPath();
+            this.ctx.fillStyle = this.brushShape.color;
+            this.ctx.strokeStyle = this.brushShape.color;
+            switch (this.brushShape.shape) {
+                case 'square':
+                    this.drawSquare(x, y);
+                    break;
+                case 'circle':
+                    this.drawCircle(x, y);
+                    break;
+                case 'star':
+                    this.drawStar(x, y);
+                    break;
+                case 'img':
+                    this.drawImage(this.selectedImg, x, y)
+                    break;
+            }
+            this.ctx.stroke();
+        }
+
     }
 
     onTouchMove(e) {
@@ -98,6 +159,7 @@ class Photoshop {
             this.ctx.drawImage(image, x, y);
         })
     }
+
 
     darkenFilter(amount = 30) {
         const canvasData = this.ctx.getImageData(0, 0, this.canvas.width, 600);

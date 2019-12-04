@@ -4,6 +4,10 @@
     color: white;
 }
 
+.cursor {
+    background: rgba(00, 00, 00, );
+}
+
 body {
     background: lightgray;
     overflow: hidden;
