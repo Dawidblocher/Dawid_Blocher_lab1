@@ -1,3 +1,166 @@
-input[type="text"], textarea, input[type="color"]{
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-grow: 1;
+    font-family: 'Open Sans', sans-serif;
+    background: #EAEAEA;
+}
+
+.note-wrap {
+    flex-grow: 1;
+    max-width: 1200px;
+    margin: 5px auto;
+    background: #fff;
+    padding: 10px;
+
+}
+
+#title {
     display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+input[type="text"],
+textarea {
+    display: block;
+    padding: 5px 10px;
+    font-size: 20px;
+    margin: 5px 0;
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+input[type="color"],
+input[type="submit"] {
+    display: block;
+}
+
+label {
+    font-size: 20px;
+}
+
+.addBtn {
+    background: none;
+    border: none;
+    font-size: 22px;
+}
+
+.fa-plus {
+    background: #558B2F;
+    color: white;
+    border-radius: 50%;
+    padding: 10px;
+    width: 43px;
+    height: 42px;
+}
+
+#addForm {
+    display: none;
+    flex-grow: 1;
+    height: 100vh;
+    padding: 10px 0;
+}
+
+#addForm.active {
+    display: block;
+}
+
+#form {
+    background: #fff;
+    height: 98vh;
+    padding: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.panel-wrap {
+    width: 325px;
+    height: 100vh;
+    background: #EAEAEA;
+    position: relative;
+}
+
+header {
+    background: #558B2F;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+
+
+.shorts {
+    list-style: none;
+    padding: 10px;
+}
+
+.short-item {
+    display: flex;
+    background: #fff;
+    margin: 5px 0;
+    padding: 10px;
+    position: relative;
+}
+
+.short-item .data {
+    width: 40%;
+}
+
+.time {
+    display: block;
+}
+
+.short-content {
+    width: 60%;
+}
+
+.short-content h2 {
+    font-size: 16px;
+}
+
+.flag {
+    display: block;
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.pinned {
+    position: absolute;
+    right: -7px;
+    top: -15px;
+    transform: rotate(20deg);
+    font-size: 20px;
+}
+
+#addForm .tox-tinymce {
+    border: none;
+}
+
+#addForm .tox .tox-edit-area {
+    border-top: none;
+}
+
+#addForm .tox .tox-statusbar {
+    border-top: none;
+}
+
+.mce-content-body p {
+    margin: 0;
 }

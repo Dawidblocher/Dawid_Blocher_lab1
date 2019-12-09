@@ -1,25 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>NodePocket</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap&subset=latin-ext"
+        rel="stylesheet">
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: '#text',
+            height: "80%",
+            menubar: false,
+            toolbar: false,
+            placeholer: 'elo',
+            content_css: 'styleEditor.css'
+        });
+    </script>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/e1690fc816.js" crossorigin="anonymous"></script>
     <script src="Note.js" type="text/javascript"></script>
+    <script src="NoteList.js" type="text/javascript"></script>
+    <script src="NotePocket.js" type="text/javascript"></script>
     <script src="main.js" type="text/javascript"></script>
+
 </head>
+
 <body>
-    <form>
-        <label for="title">Tytuł</label>
-        <input type="text" id="title">
-        <label for="text">Treść notatki</label>
-        <textarea name="noteText" id="text" cols="30" rows="10"></textarea>
-        <label for="color">kolor notatki</label>
-        <input type="color" id="color" value="#fb0000">
-        <label for="pinned">Przypiąć notatkę?</label>
-        <input type="checkbox" id="pinned">
-        <input type="submit" id="createInput" value="create">
-    </form>
+
+    <div class="panel-wrap">
+        <header>Notatnik</header>
+        <button class="addBtn"><i class="fas fa-plus"></i> Dodaj notatkę</button>
+        <ul class="shorts">
+
+        </ul>
+    </div>
+    <div id="addForm">
+        <form id="form">
+            <div class="validate"></div>
+            <input type="text" id="title" placeholder="Title">
+
+            <textarea name="noteText" id="text" cols="30" rows="30" placeholder="Notatki"></textarea>
+            <label for="color">kolor notatki</label>
+            <input type="color" id="color" value="#fb0000">
+            <input type="checkbox" id="pinned">
+            <label for="pinned">Przypiąć notatkę?</label>
+            <input type="submit" id="createInput" value="create">
+        </form>
+    </div>
+
 </body>
+
 </html>
