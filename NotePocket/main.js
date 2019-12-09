@@ -1,13 +1,8 @@
 document.addEventListener('DOMContentLoaded', startApp);
+let notePocket;
 
 function startApp() {
-    const notePocket = new NotePocket();
-    const noteList = new NoteList();
-    document.querySelector('.addBtn')
-        .addEventListener('click', showForm);
-    noteList.displayNotesShorts('shorts');
-}
+    notePocket = new NotePocket();
 
-function showForm() {
-    document.querySelector("#addForm").classList.toggle("active");
+
 }

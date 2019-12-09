@@ -8,6 +8,7 @@ body {
     flex-grow: 1;
     font-family: 'Open Sans', sans-serif;
     background: #EAEAEA;
+    flex-wrap: wrap;
 }
 
 .note-wrap {
@@ -69,7 +70,6 @@ label {
 #addForm {
     display: none;
     flex-grow: 1;
-    height: 100vh;
     padding: 10px 0;
 }
 
@@ -79,7 +79,7 @@ label {
 
 #form {
     background: #fff;
-    height: 98vh;
+    height: 93vh;
     padding: 10px;
     max-width: 1200px;
     margin: 0 auto;
@@ -87,7 +87,6 @@ label {
 
 .panel-wrap {
     width: 325px;
-    height: 100vh;
     background: #EAEAEA;
     position: relative;
 }
@@ -99,6 +98,7 @@ header {
     text-align: center;
     color: #fff;
     margin-bottom: 10px;
+    width: 100%;
 }
 
 
@@ -110,10 +110,12 @@ header {
 
 .short-item {
     display: flex;
+    flex-wrap: wrap;
     background: #fff;
     margin: 5px 0;
     padding: 10px;
     position: relative;
+    cursor: pointer;
 }
 
 .short-item .data {
@@ -126,6 +128,10 @@ header {
 
 .short-content {
     width: 60%;
+}
+
+.short-content p {
+    word-wrap: break-word;
 }
 
 .short-content h2 {
@@ -163,4 +169,50 @@ header {
 
 .mce-content-body p {
     margin: 0;
+}
+
+.color-input {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background: red;
+}
+
+.red {
+    background: red;
+}
+
+.orange {
+    background: orange;
+}
+
+.green {
+    background: green;
+}
+
+.label-title {
+    display: block;
+}
+
+.control-panel {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.deleteNote,
+.editNote {
+    height: 30px;
+    width: 30px;
+    background: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.control-panel button:hover {
+    color: red;
+}
+
+#editInput {
+    display: none;
 }

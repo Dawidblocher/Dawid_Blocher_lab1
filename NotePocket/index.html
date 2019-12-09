@@ -30,9 +30,10 @@
 </head>
 
 <body>
-
+    <header>
+        <div class="logo">Notatnik</div>
+    </header>
     <div class="panel-wrap">
-        <header>Notatnik</header>
         <button class="addBtn"><i class="fas fa-plus"></i> Dodaj notatkę</button>
         <ul class="shorts">
 
@@ -41,14 +42,21 @@
     <div id="addForm">
         <form id="form">
             <div class="validate"></div>
-            <input type="text" id="title" placeholder="Title">
+            <input type="text" id="title" placeholder="Title" autocomplete="off">
 
             <textarea name="noteText" id="text" cols="30" rows="30" placeholder="Notatki"></textarea>
-            <label for="color">kolor notatki</label>
-            <input type="color" id="color" value="#fb0000">
-            <input type="checkbox" id="pinned">
-            <label for="pinned">Przypiąć notatkę?</label>
+            <label class="label-title">kolor notatki</label>
+            <label for="color"><input type="radio" id="color" name="color" value="#ff0000"> <span
+                    class="color-input red"></span> </label>
+            <label for="color2">
+                <input type="radio" id="color2" name="color" value="#ffa500">
+                <span class="color-input orange"></span></label>
+            <label for="color3">
+                <input type="radio" id="color3" name="color" value="#008000">
+                <span class="color-input green"></span></label>
+            <label for="pinned" class="label-title"><input type="checkbox" id="pinned"> Przypiąć notatkę?</label>
             <input type="submit" id="createInput" value="create">
+            <input type="submit" id="editInput" value="edit">
         </form>
     </div>
 
