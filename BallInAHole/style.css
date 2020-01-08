@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.game-wrap{
+    height: 100vh;
+    width: 100%;
+}
+
+.ball{
+    background: black;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.hole{
+    background: gray;
+    position: absolute;
+    border-radius: 50%;
+}
